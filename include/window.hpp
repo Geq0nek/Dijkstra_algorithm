@@ -7,12 +7,11 @@ private:
 	sf::RenderWindow window;
 	std::vector<sf::RectangleShape*> grid;
 	std::vector<sf::Vector3i> path;
-	std::vector<sf::RectangleShape*> obstacles;
+	std::vector<int> nodeState;
 	sf::Vector2i startingNode;
 	sf::Vector2i endingNode;
 
 	const unsigned int FPS = 60;
-	static const sf::Time TimePerFrame;
 
 public:
 	App();
@@ -22,9 +21,14 @@ public:
 	void setEndingNode(sf::Vector2i mousePosition);
 	sf::Vector2i convertMousePosToInt(sf::Vector2i mousePosition);
 	void drawObstacles(sf::Vector2i mousePosition);
-	void App::findPath();
-	void drawPath();
+	void checkNode(int x, int y, int z, std::vector<sf::Vector2i>& visitedNodes, std::vector<sf::Vector3i>& adjNodesList);
+	void findPath();
+	void processHandler();
 	void run();
+	bool isWall(int x, int y);
+	void finalPath();
+	void drawPath();
+	bool isVisitedNode(int x, int y, std::vector<sf::Vector2i>& coords);
 	~App();
 };
 
