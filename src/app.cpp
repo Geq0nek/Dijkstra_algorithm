@@ -1,4 +1,4 @@
-#include "..\include\window.hpp"
+#include "..\include\app.hpp"
 
 
 App::App() {
@@ -235,7 +235,6 @@ void App::findPath() {
 		}
 
 		adjNodesList.erase(adjNodesList.begin(), adjNodesList.begin() + noofnodes - 1);
-		//adjNodesList.clear();
 
 		for (auto step : adjNodesList)
 		{

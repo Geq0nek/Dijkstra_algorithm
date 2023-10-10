@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include "..\include\window.hpp"
+#include "..\include\app.hpp"
 
 
 int main()
